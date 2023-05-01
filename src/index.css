@@ -1,0 +1,62 @@
+body {
+  background-color: black;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  }
+
+  .logo-container {
+    width: 80%;
+    margin-left: 40%;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 50%;
+  }
+
+  .login-container {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    text-decoration: none;
+    color: white;
+  }
+
+  .login-container a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+  }
+
+  .starship-list {
+    color: white;
+    list-style: none;
+    
+  }
+
+.text {
+    color: white;
+  }
+
+  .ships{
+    background-color: #151515;
+    margin: 10px 5px;
+    padding: 10px 5px;
+  }
