@@ -1,32 +1,23 @@
-import React, { useState, useEffect } from "react";
+import { React, useContext, useEffect } from "react";
+import { ShipList } from "../context/ShipList";
 
 const ListStarships = () => {
-  const [shipData, setShipData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://swapi.dev/api/starships/")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data.results);
-        setShipData(data.results);
-        console.log(shipData);
-      });
-  });
+  const shipList = useContext(ShipList);
 
   return (
     <>
-      <ul className="starship-list">
-        {shipData.map((result) => (
-          <>
-            <div className="ships">
-              <li>{result.name}</li>
-              <li>{result.model}</li>
-            </div>
-          </>
-        ))}
-      </ul>
+      <div className="list-container">
+        {shipList ? (
+          shipList.map((ship) => (
+            <ul className="starship-list" key={ship.name}>
+              <li className="list-name">{ship.name}</li>
+              <li className="list-model">{ship.model}</li>
+            </ul>
+          ))
+        ) : (
+          <p className="text">Loading...</p>
+        )}
+      </div>
     </>
   );
 };

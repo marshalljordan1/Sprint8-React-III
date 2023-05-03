@@ -55,8 +55,34 @@ body {
     color: white;
   }
 
-  .ships{
-    background-color: #151515;
-    margin: 10px 5px;
-    padding: 10px 5px;
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 15%;
   }
+
+  .list-rows {
+    border: blue solid;
+    width: 100%;
+  }
+
+  .starship-list{
+    background-color: #151515;
+    padding: 20px;
+  }
+
+  .list-name {
+    color: #AAAAAA;
+    font-size: large;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  .list-model {
+    color: #AAAAAA;
+    font-size: normal;
+    font-weight: normal;
+  }
+
+  
