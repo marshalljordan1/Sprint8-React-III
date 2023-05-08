@@ -1,32 +1,39 @@
-import React, { useState, useEffect } from "react";
+import { useContext, useState } from "react";
+import { ShipListContext } from "../context/ShipListContext";
+import ShipDropdown from "./ShipDropdown";
 
 const ListStarships = () => {
-  const [shipData, setShipData] = useState([]);
+  const shipList = useContext(ShipListContext);
 
-  useEffect(() => {
-    fetch("https://swapi.dev/api/starships/")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data.results);
-        setShipData(data.results);
-        console.log(shipData);
-      });
-  });
+  const [selectedShip, setSelectedShip] = useState(null);
+
+  const handleShipClick = (ship) => {
+    setSelectedShip(ship);
+  };
 
   return (
     <>
-      <ul className="starship-list">
-        {shipData.map((result) => (
-          <>
-            <div className="ships">
-              <li>{result.name}</li>
-              <li>{result.model}</li>
+      {shipList ? (
+        <>
+          {shipList.map((ship) => (
+            <div
+              onClick={() => handleShipClick(ship)}
+              className="list-container"
+              key={ship.url}
+            >
+              <ul className="starship-list" key={ship.url}>
+                <li className="list-name">{ship.name.toUpperCase()}</li>
+                <li className="list-model">{ship.model.toUpperCase()}</li>
+              </ul>
+              {selectedShip && selectedShip.name === ship.name && (
+                <ShipDropdown shipInfo={selectedShip} />
+              )}
             </div>
-          </>
-        ))}
-      </ul>
+          ))}
+        </>
+      ) : (
+        <p className="text">Loading...</p>
+      )}
     </>
   );
 };

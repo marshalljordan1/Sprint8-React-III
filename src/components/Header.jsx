@@ -11,10 +11,10 @@ const Header = () => {
         </div>
         <div className="login-container">
           <Link to="/login" className="login" href="">
-            Log in
+            LOG IN
           </Link>
           <Link to="/sign-up" className="signup" href="">
-            Sign up
+            SIGN UP
           </Link>
         </div>
       </header>
