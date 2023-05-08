@@ -1,4 +1,7 @@
 const ShipDropdown = ({ shipInfo }) => {
+  if (!shipInfo) {
+    return null;
+  }
   const id = shipInfo.url.slice(32, -1);
   const image = `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`;
 

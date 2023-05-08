@@ -12,13 +12,10 @@ export const ShipListContextProvider = (props) => {
     fetch(`https://swapi.dev/api/starships/?page=${page}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         console.log(data.next);
         if (data.results && data.results.length > 0) {
-          console.log(data);
           setShipData((prevShipData) => [...prevShipData, ...data.results]);
-          if (data.next) {
-            setPage(page + 1);
-          }
         }
       })
       .catch((error) => console.log(error))
@@ -31,10 +28,10 @@ export const ShipListContextProvider = (props) => {
     const clientHeight = document.documentElement.clientHeight;
 
     if (!isLoading && scrollTop + clientHeight >= scrollHeight - 5) {
-      if (shipData.length % 10 !== 0 || page === 1) {
+      if (shipData.length % 10 !== 0) {
         return;
       }
-      fetchShips();
+      setPage(page + 1);
     }
   };
 
@@ -43,7 +40,7 @@ export const ShipListContextProvider = (props) => {
     return () => {
       window.removeEventListener("scroll", handleLoadMore);
     };
-  }, []);
+  }, [handleLoadMore]);
 
   useEffect(() => {
     fetchShips();
