@@ -1,28 +1,32 @@
 body {
   background-color: black;
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
 }
 
 .header-container {
   display: flex;
-  justify-content: center;
   align-items: center;
 
   }
 
   .logo-container {
     width: 80%;
-    margin-left: 40%;
+    margin-left: 39%;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   .logo {
     width: 50%;
+    margin-top: 5%;
   }
 
   .login-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 30%;
     text-decoration: none;
     color: white;
@@ -34,21 +38,40 @@ body {
   }
 
   .nav-links {
-    width: 100%;
     display: flex;
     justify-content: center;
+    border-top: solid #343434;
+    border-bottom: solid #343434;
+    text-align: center;
+    width: 100%;
   }
 
-  .nav-links a {
+  .nav-home {
     color: white;
     text-decoration: none;
-    margin: 10px;
+    border-left: solid #343434;
+    border-right: solid #343434;
+    padding: 1% 2%;
+  }
+
+  .nav-home:hover {
+    border-bottom:  solid blue;
+  }
+
+  .nav-starships:hover {
+    border-bottom: solid blue;
+  }
+
+  .nav-starships {
+    color: white;
+    text-decoration: none;
+    border-right: solid #343434;
+    padding: 1% 2%;
   }
 
   .starship-list {
     color: white;
     list-style: none;
-    
   }
 
 .text {
@@ -63,11 +86,10 @@ body {
   }
 
   .list-rows {
-    border: blue solid;
     width: 100%;
   }
 
-  .starship-list{
+  .starship-list-container{
     background-color: #151515;
     padding: 20px;
   }
@@ -83,6 +105,16 @@ body {
     color: #AAAAAA;
     font-size: normal;
     font-weight: normal;
+  }
+
+  .ship-title {
+    text-align: center;
+    color: white;
+  }
+
+  .dropdown-container {
+    color: white;
+    border: red solid;
   }
 
   

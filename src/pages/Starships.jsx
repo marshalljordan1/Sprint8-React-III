@@ -1,13 +1,11 @@
-import Header from "../components/Header";
 import ListStarships from "../components/ListStarships";
-import Navbar from "../components/Navbar";
+import ShipDropdown from "../components/ShipDropdown";
 
 const Starships = () => {
   return (
     <>
-      <Header />
-      <Navbar />
       <ListStarships />
+      <ShipDropdown />
     </>
   );
 };

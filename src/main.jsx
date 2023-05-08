@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { ShipListProvider } from "./context/ShipList.jsx";
+import { ShipListContextProvider } from "./context/ShipListContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ShipListProvider>
+    <ShipListContextProvider>
       <App />
-    </ShipListProvider>
+    </ShipListContextProvider>
   </React.StrictMode>
 );
