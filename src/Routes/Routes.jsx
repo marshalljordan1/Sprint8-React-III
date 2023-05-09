@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Starships from "../pages/Starships";
-import Login from "../pages/Login";
-import SignUp from "../pages/SignUp";
+import LoginPage from "../pages/LoginPage";
+import SignUpPage from "../pages/SignUpPage";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 
@@ -13,8 +13,8 @@ const Router = () => (
     <Routes>
       <Route index element={<Home />} />
       <Route path="/Starships/" element={<Starships />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/sign-up" element={<SignUpPage />} />
     </Routes>
   </BrowserRouter>
 );
