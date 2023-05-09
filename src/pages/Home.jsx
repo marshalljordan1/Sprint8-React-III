@@ -1,7 +1,13 @@
+import home from "../images/starwars-home.png";
+
 const Home = () => {
   return (
     <>
-      <h1 className="text"> HOMEPAGE</h1>
+      <img
+        className="home-image"
+        src={home}
+        alt="Welcome to the StarWars Website!"
+      ></img>
     </>
   );
 };

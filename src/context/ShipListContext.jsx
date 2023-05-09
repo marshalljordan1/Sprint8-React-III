@@ -7,19 +7,21 @@ export const ShipListContextProvider = (props) => {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
 
+  let loading = false;
   const fetchShips = () => {
+    if (loading === true) return;
+    loading = true;
     setIsLoading(true);
     fetch(`https://swapi.dev/api/starships/?page=${page}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        console.log(data.next);
         if (data.results && data.results.length > 0) {
           setShipData((prevShipData) => [...prevShipData, ...data.results]);
         }
       })
-      .catch((error) => console.log(error))
-      .finally(() => setIsLoading(false));
+      .catch((error) => console.log(error));
+    setIsLoading(false);
+    loading = false;
   };
 
   const handleLoadMore = () => {
@@ -27,11 +29,12 @@ export const ShipListContextProvider = (props) => {
     const scrollHeight = document.documentElement.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
 
-    if (!isLoading && scrollTop + clientHeight >= scrollHeight - 5) {
+    if (isLoading === false && scrollTop + clientHeight >= scrollHeight - 0) {
       if (shipData.length % 10 !== 0) {
         return;
+      } else {
+        setPage((prevPage) => prevPage + 1);
       }
-      setPage(page + 1);
     }
   };
 
@@ -40,7 +43,7 @@ export const ShipListContextProvider = (props) => {
     return () => {
       window.removeEventListener("scroll", handleLoadMore);
     };
-  }, [handleLoadMore]);
+  }, []);
 
   useEffect(() => {
     fetchShips();

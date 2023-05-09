@@ -1,4 +1,4 @@
-import { React, useContext, useEffect, useState } from "react";
+import { React, useContext, useState } from "react";
 import { ShipListContext } from "../context/ShipListContext";
 import ShipDropdown from "../components/ShipDropdown";
 
@@ -10,22 +10,28 @@ const ListStarships = () => {
     setSelectedShip(ship);
   };
 
+  const generateId = (ship) => {
+    // Combine the ship's name and its manufacturer to create a unique id
+    return `${ship.name}-${ship.manufacturer}`;
+  };
+
   return (
     <>
       {shipList ? (
         <>
           {shipList.map((ship) => {
+            const id = generateId(ship);
             return (
               <div
                 onClick={() => handleClick(ship)}
                 className="list-container"
-                key={ship.name}
+                key={id}
+                id={id}
               >
                 <ul className="starship-list">
                   <li className="list-name">{ship.name}</li>
                   <li className="list-model">{ship.model}</li>
                 </ul>
-
                 {selectedShip === ship && (
                   <ShipDropdown shipInfo={selectedShip} />
                 )}

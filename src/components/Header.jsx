@@ -9,7 +9,7 @@ const Header = () => {
         <div className="logo-container">
           <img className="logo" src={logo} alt="starwars logo" />
         </div>
-        <div className="login-container">
+        <div className="login-buttons-container">
           <Link to="/login" className="login" href="">
             LOG IN
           </Link>

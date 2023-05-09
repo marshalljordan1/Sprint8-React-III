@@ -8,113 +8,163 @@ body {
 .header-container {
   display: flex;
   align-items: center;
+}
 
-  }
+.logo-container {
+  width: 80%;
+  margin-left: 39%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  .logo-container {
-    width: 80%;
-    margin-left: 39%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
+.logo {
+  width: 50%;
+  margin-top: 5%;
+}
 
-  .logo {
-    width: 50%;
-    margin-top: 5%;
-  }
+.login-buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+  text-decoration: none;
+  color: white;
+}
 
-  .login-container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 30%;
-    text-decoration: none;
-    color: white;
-  }
+.login-buttons-container a {
+  text-decoration: none;
+  color: white;
+}
 
-  .login-container a {
-    text-decoration: none;
-    color: white;
-  }
+.nav-links {
+  display: flex;
+  justify-content: center;
+  border-top: solid #343434;
+  border-bottom: solid #343434;
+  text-align: center;
+  width: 100%;
+}
 
-  .nav-links {
-    display: flex;
-    justify-content: center;
-    border-top: solid #343434;
-    border-bottom: solid #343434;
-    text-align: center;
-    width: 100%;
-  }
+.nav-home {
+  color: white;
+  text-decoration: none;
+  border-left: solid #343434;
+  border-right: solid #343434;
+  padding: 1% 2%;
+}
 
-  .nav-home {
-    color: white;
-    text-decoration: none;
-    border-left: solid #343434;
-    border-right: solid #343434;
-    padding: 1% 2%;
-  }
+.nav-home:hover {
+  border-bottom: solid blue;
+}
 
-  .nav-home:hover {
-    border-bottom:  solid blue;
-  }
+.nav-starships:hover {
+  border-bottom: solid blue;
+}
 
-  .nav-starships:hover {
-    border-bottom: solid blue;
-  }
+.nav-starships {
+  color: white;
+  text-decoration: none;
+  border-right: solid #343434;
+  padding: 1% 2%;
+}
 
-  .nav-starships {
-    color: white;
-    text-decoration: none;
-    border-right: solid #343434;
-    padding: 1% 2%;
-  }
-
-  .starship-list {
-    color: white;
-    list-style: none;
-  }
+.starship-list {
+  color: white;
+  list-style: none;
+}
 
 .text {
-    color: white;
-  }
+  color: white;
+}
 
-  .list-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 15%;
-  }
+.list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 15%;
+}
 
-  .list-rows {
-    width: 100%;
-  }
+.list-rows {
+  width: 100%;
+}
 
-  .starship-list-container{
-    background-color: #151515;
-    padding: 20px;
-  }
+.starship-list-container {
+  background-color: #151515;
+  padding: 20px;
+}
 
-  .list-name {
-    color: #AAAAAA;
-    font-size: large;
-    font-weight: bold;
-    margin: 5px 0;
-  }
+.list-name {
+  color: #aaaaaa;
+  font-size: large;
+  font-weight: bold;
+  margin: 5px 0;
+}
 
-  .list-model {
-    color: #AAAAAA;
-    font-size: normal;
-    font-weight: normal;
-  }
+.list-model {
+  color: #aaaaaa;
+  font-size: normal;
+  font-weight: normal;
+}
 
-  .ship-title {
-    text-align: center;
-    color: white;
-  }
+.dropdown-container {
+  color: white;
+  background-color: #343434;
+  border: white solid;
+  padding: 20px 20px;
+  width: 100%;
+  text-align: left;
+}
 
-  .dropdown-container {
-    color: white;
-    border: red solid;
-  }
+.ship-title {
+  text-align: center;
+}
 
-  
+.ship-image {
+  display: flex;
+  justify-content: center;
+}
+
+.top-info {
+  border: solid #aaaaaa;
+  padding: 10px;
+}
+
+.bottom-info-container {
+  display: flex;
+  justify-content: start;
+  border: solid #aaaaaa;
+}
+
+.left-info {
+  padding: 10px;
+}
+
+.right-info {
+  border-left: solid #aaaaaa;
+  padding: 10px;
+}
+
+.home-image {
+  width: 100vw;
+  max-height: 100vw;
+}
+
+.login-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-page {
+  display: flex;
+  margin-top: 8%;
+  justify-content: center;
+}
+
+.login-page-button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 0px 25%;
+}
