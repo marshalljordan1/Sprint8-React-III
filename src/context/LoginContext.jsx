@@ -5,7 +5,6 @@ export const LoginContext = createContext();
 export const LoginContextProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [alert, setAlert] = useState(null);
 
   const handleEmailChange = (event) => {
@@ -25,7 +24,6 @@ export const LoginContextProvider = ({ children }) => {
 
     if (user) {
       setAlert("Login successful");
-      setIsAuthenticated(true);
     } else {
       setAlert("Invalid email or password");
     }
