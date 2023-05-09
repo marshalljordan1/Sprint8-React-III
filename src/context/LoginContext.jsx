@@ -6,6 +6,7 @@ export const LoginContextProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [alert, setAlert] = useState(null);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -23,10 +24,10 @@ export const LoginContextProvider = ({ children }) => {
     );
 
     if (user) {
-      console.log("Logged in successfully!");
+      setAlert("Login successful");
       setIsAuthenticated(true);
     } else {
-      console.log("Invalid email or password.");
+      setAlert("Invalid email or password");
     }
   };
 
@@ -38,6 +39,7 @@ export const LoginContextProvider = ({ children }) => {
         handleEmailChange,
         handlePasswordChange,
         handleLogin,
+        alert,
       }}
     >
       {children}

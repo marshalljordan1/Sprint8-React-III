@@ -149,22 +149,26 @@ body {
   max-height: 100vw;
 }
 
-.login-container {
+.log-sign-container {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.login-page {
+.log-sign-page {
   display: flex;
   margin-top: 8%;
   justify-content: center;
 }
 
-.login-page-button {
+.log-sign-page-button {
   width: 50%;
   display: flex;
   justify-content: center;
   margin: 0px 25%;
+}
+
+.alert {
+  margin-top: 5px;
 }

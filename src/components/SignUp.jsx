@@ -1,20 +1,20 @@
 import { useContext } from "react";
-import { LoginContext } from "../context/LoginContext";
+import { SignUpContext } from "../context/SignUpContext";
 
-const Login = () => {
+const SignUp = () => {
   const {
     email,
     password,
     handleEmailChange,
     handlePasswordChange,
-    handleLogin,
+    handleSignUp,
     alert,
-  } = useContext(LoginContext);
+  } = useContext(SignUpContext);
 
   return (
     <div className="log-sign-page">
       <div className="log-sign-container">
-        <h2>Login</h2>
+        <h2>Sign Up</h2>
         <label>
           Email:
           <input
@@ -39,19 +39,20 @@ const Login = () => {
           <div
             className="alert"
             style={{
-              color: alert === "Login successful" ? "green" : "red",
+              color:
+                alert === "User registered successfully!" ? "green" : "red",
             }}
           >
             {alert}
           </div>
         )}
         <br />
-        <button className="log-sign-page-button" onClick={handleLogin}>
-          Login
+        <button className="log-sign-page-button" onClick={handleSignUp}>
+          Register
         </button>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;
