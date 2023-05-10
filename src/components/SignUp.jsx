@@ -48,7 +48,7 @@ const SignUp = () => {
         )}
         <br />
         <button className="log-sign-page-button" onClick={handleSignUp}>
-          Register
+          Sign up
         </button>
       </div>
     </div>
